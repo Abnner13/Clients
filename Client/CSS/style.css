@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background-color: rgb(66,124,136);
+}
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+.cabecalho {
+    background:rgb(244,244,244);
+    color: rgb(66,124,136);
+    height: 80px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(66,124,136);
+    font-size: 1.3em;
+    padding: 10px 15px;
+}
+
+.menu a:hover {
+    background-color: rgb(66,124,136);
+    color: #fff;
+}
+
+.cabecalho .botao {
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin-right: 10px;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menu {
+    flex-grow: 10;
+}
+
+.menu ul {
+    display: flex;
+}
+.menu li {
+    margin: 0 10px;
+}
+
+form {
+    max-width: 600px;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+
+#myform {
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+form h3 {
+    color: rgb(66,124,136);
+    text-align: center;
+}
+
+form input[type=text],
+form input[type=password],
+form input[type=number],
+form input[type=email] {
+    width: 95%;
+    height: 40px;
+    border: 2px solid #ccc;
+    padding-left: 10px;
+    margin: 7px 0;
+}
+
+form input[type=submit] {
+    width: 97%;
+    height: 40px;
+    cursor: pointer;
+    background: rgb(66,124,136);
+    color: #fff;
+    border: 0;
+    border-radius: 20px;
+    transition: 1.2s;
+}
+
+form input[type=submit]:hover {
+    background: rgb(24, 90, 109)
+}
+
+#mylist {
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    /* usa column ou row para sua lista */
+    flex-direction: Column;
+    background-color: #fff;
+}
+#mylist ul {
+    width: 80%;
+    margin: 0px;
+    padding-inline-start: 0px;
+}
+#mylist ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    color: rgb(66,124,136);
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+}
+
+#mylist ul li:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    background-color: #25bcff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+#mylist h2 {
+    text-align: center;
+    color: #fff;
+    background: rgb(66,124,136);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 78%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+#mylist img {
+    height: 20;
+    margin: 0px 5px;
+    width: 15px;
+}
+#mylist img:hover {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px; 
+    background-color: #fff;
+}
+/* 
+.sideWrapper {
+    display: flex;
+}
+.sideWrapper .sidebar {
+    width: 200px;
+    height: 100%;
+    background-color:rgb(24, 90, 109);
+} */
