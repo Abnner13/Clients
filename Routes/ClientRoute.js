@@ -30,7 +30,7 @@ router.get('/Clients/:Id', (req, res) => {
     }
 })
 
-router.post('/Create', (req, res) => {
+router.post('/Clients', (req, res) => {
     let requestBody = req.body
     if(!requestBody){
         res.status(400)
@@ -40,6 +40,7 @@ router.post('/Create', (req, res) => {
         Client.create(requestBody)
             .then(() => {
                 res.send('Client added successfully')
+                console.log(requestBody)
             })
             .catch( err => {
                 res.send(err)
@@ -47,21 +48,27 @@ router.post('/Create', (req, res) => {
     }
 })
 
-router.put('/Update/:Id', (req, res) => {
+router.put('/Clients/:Id', (req, res) => {
     /*Problema esta na requisiçao que nao muda os campos Created and Update*/
 
     let reqBody = req.body
     let reqParams = req.params
+
     if(!reqBody || !reqParams){
         res.status(400)
         res.json({error: 'Bad Data'})
     }
     else{
-        const client = Client.findByPk(reqParams.Id)
-        
-        client = { reqBody }
-        client.save()
-        res.json(client)
+        Client.update(
+            { firstName: reqBody.firstName },
+            { returning: true, where: { id: reqParams.Id } } 
+        )
+        .then( ([rowsUpdate, [clientUpdate]]) => {
+            res.json(clientUpdate)
+        })
+        .catch(err => {
+            res.send('error:' + err)
+        })
     }
 })
 

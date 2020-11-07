@@ -20,7 +20,7 @@ const Client = database.define('Client', {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
-    eamil: {
+    email: {
         type: Sequelize.STRING,
         allowNull: false,
     },

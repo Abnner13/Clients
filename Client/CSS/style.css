@@ -97,7 +97,7 @@ form input[type=email] {
     margin: 7px 0;
 }
 
-form input[type=submit] {
+form input[type=button] {
     width: 97%;
     height: 40px;
     cursor: pointer;
@@ -183,3 +183,9 @@ form input[type=submit]:hover {
     height: 100%;
     background-color:rgb(24, 90, 109);
 } */
+
+.destaque {
+    border: solid 10px greenyellow;
+    color: greenyellow;
+    font-weight: bold;
+}
