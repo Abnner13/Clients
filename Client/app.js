@@ -1,4 +1,4 @@
-import myapi from '/Repository/Api.js';
+import myapi from './Repository/Api.js';
 
 window.onload = initPage;
 const button = document.getElementById('Acao').onclick = sendFormData
@@ -32,23 +32,17 @@ function getFormData() {
 	return JSON.stringify(data)
 }
 
-function show(clients) {
-	const myDiv = createDiv()
-	const idSpan = document.createElement('span')
-	const nameLi = document.createElement('li')
-	let elements = [];
-	debugger
-
-	for (let client of clients) {
-		idSpan.innerHTML = client.id
-		nameLi.innerHTML = client.firstName
-		nameLi.prepend(idSpan)
-		nameLi.append(myDiv)
-		elements.push(nameLi)
-	}
-	for(let li of elements) {
-		document.querySelector('#UlList').append(li)
-	}
+function show(data) {
+	for (let client of data) {
+		const myDiv = createDiv()
+        const idSpan = document.createElement('span')
+        const nameLi = document.createElement('li')
+        idSpan.textContent = client.id
+        nameLi.textContent = client.firstName
+        nameLi.prepend(idSpan)
+        nameLi.append(myDiv)
+        document.querySelector('#UlList').append(nameLi)
+    }
 }
 
 function createDiv() {
